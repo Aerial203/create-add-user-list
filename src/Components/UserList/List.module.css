@@ -1,0 +1,9 @@
+.user-lists__items {
+    border: 1px solid #afaeaefd;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.user-lists__item {
+    font-weight: lighter;
+}

@@ -18,12 +18,17 @@ const userList = [
     name: "Laxman",
     age: 16,
   },
+  {
+    id: 4,
+    name: "Shiva",
+    age: 32,
+  },
 ]
 
 function App() {
   return (
     <div>
-      <UserList allUser={userList} />
+      <UserList allUsers={userList} />
     </div>
   )
 }
