@@ -1,5 +1,6 @@
 import React from "react"
 import UserList from "./Components/UserList/UserList"
+import NewUser from "./Components/UserInput/NewUser"
 import "./App.css"
 
 const userList = [
@@ -15,11 +16,6 @@ const userList = [
   },
   {
     id: 3,
-    name: "Laxman",
-    age: 16,
-  },
-  {
-    id: 4,
     name: "Shiva",
     age: 32,
   },
@@ -28,6 +24,7 @@ const userList = [
 function App() {
   return (
     <div>
+      <NewUser />
       <UserList allUsers={userList} />
     </div>
   )

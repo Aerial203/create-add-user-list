@@ -16,5 +16,5 @@ body {
     background-color: #2C3639;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: column;
 }

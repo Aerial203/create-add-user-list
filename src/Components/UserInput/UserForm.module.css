@@ -1,0 +1,29 @@
+input {
+    width: 47.5rem;
+    height: 2rem;
+    border: none;
+}
+
+.name, .age {
+    display: block;
+    font-weight: bold;
+    margin: 0.1rem;
+}
+.form-group {
+    padding: 1rem;
+}
+
+.button {
+    margin: 1rem 0 0 0;
+    height: 2.5rem;
+    width: 9rem;
+    background-color: #2b1356;
+    color: #fff;
+    border: none;
+    border: 1px solid #2b1356;
+}
+
+.button:hover {
+    background-color: #F7ECDE;
+    color: #000;
+}
