@@ -1,30 +1,34 @@
-import React from "react"
+import React, { useState } from "react"
 import UserList from "./Components/UserList/UserList"
 import NewUser from "./Components/UserInput/NewUser"
 import "./App.css"
 
-const userList = [
-  {
-    id: 1,
-    name: "Ram",
-    age: 19,
-  },
-  {
-    id: 2,
-    name: "Sita",
-    age: 18,
-  },
-  {
-    id: 3,
-    name: "Shiva",
-    age: 32,
-  },
-]
-
 function App() {
+  const [userList, setUserList] = useState([
+    {
+      id: 1,
+      name: "Ram",
+      age: 19,
+    },
+    {
+      id: 2,
+      name: "Sita",
+      age: 18,
+    },
+    {
+      id: 3,
+      name: "Shiva",
+      age: 32,
+    },
+  ])
+  const handleNewUser = (newUser) => {
+    setUserList((prevList) => {
+      return [...prevList, newUser]
+    })
+  }
   return (
     <div>
-      <NewUser />
+      <NewUser onGetNewUser={handleNewUser} />
       <UserList allUsers={userList} />
     </div>
   )

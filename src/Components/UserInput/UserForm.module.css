@@ -26,4 +26,6 @@ input {
 .button:hover {
     background-color: #F7ECDE;
     color: #000;
+    font-size: 1rem;
+    font-weight: bolder;
 }
