@@ -1,4 +1,5 @@
 .user-lists__items {
+    cursor: pointer;
     border: 1px solid #afaeaefd;
     margin: 0.5rem;
     padding: 1rem;

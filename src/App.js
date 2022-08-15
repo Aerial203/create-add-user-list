@@ -7,18 +7,13 @@ function App() {
   const [userList, setUserList] = useState([
     {
       id: 1,
-      name: "Ram",
-      age: 19,
+      name: "Radhe",
+      age: 16,
     },
     {
       id: 2,
-      name: "Sita",
+      name: "Krishna",
       age: 18,
-    },
-    {
-      id: 3,
-      name: "Shiva",
-      age: 32,
     },
   ])
   const handleNewUser = (newUser) => {
