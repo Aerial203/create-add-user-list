@@ -21,10 +21,15 @@ function App() {
       return [...prevList, newUser]
     })
   }
+  const getUserId = (userId) => {
+    const newUserList = userList.filter((list) => list.id !== userId)
+    setUserList((prevList) => [...newUserList])
+  }
+
   return (
     <div>
       <NewUser onGetNewUser={handleNewUser} />
-      <UserList allUsers={userList} />
+      <UserList allUsers={userList} onGetId={getUserId} />
     </div>
   )
 }
