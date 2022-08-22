@@ -1,0 +1,29 @@
+.overlay__outer-layer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay__container {
+    background-color: #F7ECDE; 
+    width: 50rem;
+    height: 15rem;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.overLay__header {
+    height: 5rem;
+    background-color: #2b1356;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.overlay__heading {
+    margin: 0;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}

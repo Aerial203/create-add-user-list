@@ -20,7 +20,15 @@ const UserForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!input.name || !input.age) return
+    if (!input.name || !input.age) {
+      const checkUserInput = {
+        isNameEmpty: input.name === "",
+        isAgeEmpty: input.age === "",
+      }
+      props.onUserInputInfo(checkUserInput)
+      return
+    }
+
     const newUser = { ...input, id: new Date().getTime().toString() }
     props.onGetUser(newUser)
     setInput({
