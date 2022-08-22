@@ -16,6 +16,7 @@ function App() {
       age: 18,
     },
   ])
+
   const handleNewUser = (newUser) => {
     setUserList((prevList) => {
       return [...prevList, newUser]
@@ -26,10 +27,16 @@ function App() {
     setUserList((prevList) => [...newUserList])
   }
 
+  let content = <p>User List is empty may be add one.</p>
+
+  if (userList.length) {
+    content = <UserList allUsers={userList} onGetId={getUserId} />
+  }
+
   return (
     <div>
       <NewUser onGetNewUser={handleNewUser} />
-      <UserList allUsers={userList} onGetId={getUserId} />
+      {content}
     </div>
   )
 }

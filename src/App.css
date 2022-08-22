@@ -18,3 +18,10 @@ body {
     justify-content: center;
     align-items: column;
 }
+
+p {
+    text-align: center;
+    background-color: #F7ECDE;
+    padding: 1rem;
+    border-radius: 12px;
+}
