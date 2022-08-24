@@ -25,7 +25,7 @@ const UserForm = (props) => {
         isNameEmpty: input.name === "",
         isAgeEmpty: input.age === "",
       }
-      props.onUserInputInfo(checkUserInput)
+      console.log(checkUserInput)
       return
     }
 

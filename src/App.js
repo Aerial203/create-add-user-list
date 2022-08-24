@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import UserList from "./Components/UserList/UserList"
 import NewUser from "./Components/UserInput/NewUser"
-import OverLay from "./Components/OverLay/OverLay"
 import "./App.css"
 
 function App() {
@@ -33,25 +32,10 @@ function App() {
   if (userList.length) {
     content = <UserList allUsers={userList} onGetId={getUserId} />
   }
-  let overlayContent = ""
-  const userInputInfo = (input) => {
-    const enterNameAndAge =
-      "Please Enter a valid name and age (non value input)"
-    const enterName = "Please enter a name"
-    const enterAge = "Please enter a age"
-    if (input.isNameEmpty && input.isAgeEmpty) {
-      overlayContent = <OverLay text={enterNameAndAge} />
-    } else if (input.isNameEmpty) {
-      overlayContent = <OverLay text={enterName} />
-    } else if (input.isAgeEmpty) {
-      overlayContent = <OverLay text={enterAge} />
-    }
-  }
 
   return (
     <div>
-      {overlayContent}
-      <NewUser onGetNewUser={handleNewUser} onGetInputInfo={userInputInfo} />
+      <NewUser onGetNewUser={handleNewUser} />
       {content}
     </div>
   )
