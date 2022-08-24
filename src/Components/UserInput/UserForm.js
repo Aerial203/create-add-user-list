@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import OverLay from "../OverLay/OverLay"
 import style from "./UserForm.module.css"
 
 const UserForm = (props) => {
@@ -38,19 +39,22 @@ const UserForm = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className={style.name}>Name</label>
-        <input type="text" value={input.name} onChange={handleName} />
-        <label className={style.age}>Age (Years)</label>
-        <input type="text" value={input.age} onChange={handleAge} />
-      </div>
-      <div>
-        <button type="submit" className={style.button}>
-          Add User
-        </button>
-      </div>
-    </form>
+    <div className={style.container}>
+      <OverLay text="Enter name and age" />
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label className={style.name}>Name</label>
+          <input type="text" value={input.name} onChange={handleName} />
+          <label className={style.age}>Age (Years)</label>
+          <input type="text" value={input.age} onChange={handleAge} />
+        </div>
+        <div>
+          <button type="submit" className={style.button}>
+            Add User
+          </button>
+        </div>
+      </form>
+    </div>
   )
 }
 
