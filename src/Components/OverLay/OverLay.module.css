@@ -52,4 +52,11 @@
     text-align: center;
     border: none;
     float: right;
+    font-size: 1.2rem;
+    border: 1px solid #2b1356;
+}
+
+.overlay__button:hover {
+    background-color: #F7ECDE;
+    color: #2b1356;
 }

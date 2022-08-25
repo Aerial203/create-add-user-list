@@ -2,11 +2,20 @@ import React, { useState } from "react"
 import OverLay from "../OverLay/OverLay"
 import style from "./UserForm.module.css"
 
+let errorText = ""
+
 const UserForm = (props) => {
   const [input, setInput] = useState({
     name: "",
     age: "",
   })
+
+  const [isValid, setIsValid] = useState({
+    isNameEmpty: false,
+    isAgeEmpty: false,
+    isAgeLess: false,
+  })
+
   const handleName = (e) => {
     setInput((prevInput) => {
       return { ...prevInput, name: e.target.value }
@@ -21,12 +30,27 @@ const UserForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!input.name || !input.age) {
-      const checkUserInput = {
-        isNameEmpty: input.name === "",
-        isAgeEmpty: input.age === "",
+    if (!input.name || !input.age || input.age < 0) {
+      if (!input.name && !input.age) {
+        errorText = "Please enter a valid name and age (non-empty value)"
+      } else if (!input.name) {
+        errorText = "Please enter a valid name (non-empty value)"
+      } else if (input.age && input.age < 0) {
+        errorText = "Please enter a valid age > 0"
+      } else if (!input.age) {
+        errorText = "Please enter a valid age (non-empty value)"
       }
-      console.log(checkUserInput)
+      setIsValid((prevInp) => {
+        return {
+          isNameEmpty: input.name === "",
+          isAgeEmpty: input.age === "",
+          isAgeLess: input.age < 0,
+        }
+      })
+      setInput({
+        name: "",
+        age: "",
+      })
       return
     }
 
@@ -40,7 +64,15 @@ const UserForm = (props) => {
 
   return (
     <div className={style.container}>
-      <OverLay text="Enter name and age" />
+      {isValid.isNameEmpty && (
+        <OverLay text={errorText} onClickOk={setIsValid} />
+      )}
+      {isValid.isAgeEmpty && (
+        <OverLay text={errorText} onClickOk={setIsValid} />
+      )}
+
+      {isValid.isAgeLess && <OverLay text={errorText} onClickOk={setIsValid} />}
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className={style.name}>Name</label>
