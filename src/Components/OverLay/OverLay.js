@@ -7,8 +7,9 @@ const OverLay = (props) => {
         <div className={style.overLay__header}>
           <h1 className={style.overlay__heading}>Invalid Input</h1>
         </div>
-        <div className={style.overlay__subheader}>
+        <div className={style.overlay__body}>
           <p className={style.overlay__subheading}>{props.text}</p>
+          <button className={style.overlay__button}>okay</button>
         </div>
       </div>
     </div>
